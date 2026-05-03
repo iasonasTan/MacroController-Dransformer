@@ -1,0 +1,9 @@
+{
+	"description": "An app that can transform (dransform) any input device into a macro controller",
+	"license": "proprietary",
+	"authors": [
+		"Jason Tan"
+	],
+	"copyright": "Copyright © 2026, Jason Tan",
+	"name": "macro-dransformer"
+}

@@ -1,7 +1,7 @@
 # Macro Controller Dransformer
 (dransformer means transformer)
 
-This program basicaly a better implementation of [JeController](github.com/iasonasTan/MacroController-Transformer) in Dlang.
+This program basicaly a better implementation of [JeController](https://github.com/iasonasTan/MacroController-Transformer) in Dlang.
 
 _(Again, it only works on linux)_
 

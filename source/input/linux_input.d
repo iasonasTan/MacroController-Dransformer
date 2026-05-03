@@ -1,4 +1,4 @@
-module linux_input;
+module input.linux_input;
 
 extern(C):
 

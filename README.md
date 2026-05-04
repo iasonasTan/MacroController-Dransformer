@@ -23,3 +23,19 @@ Then you can normally run the binary giving it two parameters:
 If you use the wrong device, you may lose control over your computer.
 **Be careful with which device you use** and allways check them before using `evtest` command.
 But if you didn't added the app on startup apps, after a restart the device will be free again.
+
+## Gui panel
+This app also contains a GUI panel that edits `events.conf` files.
+For the GUI **you need sdl2**, here's how to install it:
+Arch:
+```
+sudo pacman -S sdl2
+```
+Fedora:
+```
+sudo dnf install sdl2
+```
+Debian:
+```
+sudo apt-get install sdl2
+```

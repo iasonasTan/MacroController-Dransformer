@@ -20,7 +20,6 @@ public final class ConfigurationLoader : EventLoader {
         }
 
         File eventsFile = File(conffp, "r");
-
         foreach (char[] line; eventsFile.byLine()) {
             string[] lineSplit = (line.replace(" ", " ").to!string).split("=");
             if(lineSplit.length != 2) {

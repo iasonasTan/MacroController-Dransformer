@@ -2,13 +2,13 @@ import std.stdio;
 import std.string;
 import std.process;
 
-import data.ParameterChecker;
-import data.ParameterManager;
-import config.ConfigurationLoader;
-import data.ParameterManager : DEVICE_PATH_IDX;
-import data.ParameterManager : EVENTS_CONFIG_PATH_IDX;
+import data.parameter_checker;
+import data.parameter_manager;
+import config.configuration_loader;
+import data.parameter_manager : DEVICE_PATH_IDX;
+import data.parameter_manager : EVENTS_CONFIG_PATH_IDX;
 
-import events.Events;
+import events.events;
 import input.linux_input;
 
 import core.sys.linux.unistd;
@@ -29,7 +29,7 @@ int main(string[] args) {
 	}
 
 	EventManager eventManager = new EventManager(new ConfigurationLoader(params.get(EVENTS_CONFIG_PATH_IDX)));
-	input_event event;
+	InputEvent event;
 	while(true) {
 		ssize_t bytes = read(fd, &event, event.sizeof);
 		if(bytes != event.sizeof) {

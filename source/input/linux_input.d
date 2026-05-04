@@ -17,14 +17,14 @@ enum : ushort {
     KEY_ENTER = 28,
 }
 
-struct input_event {
-    timeval time;
+struct InputEvent {
+    Timeval time;
     ushort type;
     ushort code;
     int value;
 }
 
-struct timeval {
+struct Timeval {
     long tv_sec;
     long tv_usec;
 }

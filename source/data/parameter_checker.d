@@ -1,9 +1,9 @@
-module data.ParameterChecker;
+module data.parameter_checker;
 
-import data.ParameterManager : DEVICE_PATH_IDX;
-import data.ParameterManager : EVENTS_CONFIG_PATH_IDX;
+import data.parameter_manager : DEVICE_PATH_IDX;
+import data.parameter_manager : EVENTS_CONFIG_PATH_IDX;
 
-import data.ParameterManager;
+import data.parameter_manager;
 
 import std.stdio : writeln;
 import std.conv;

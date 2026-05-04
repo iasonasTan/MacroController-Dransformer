@@ -1,4 +1,4 @@
-module data.ParameterManager;
+module data.parameter_manager;
 
 import std.stdio;
 

@@ -1,4 +1,4 @@
-module events.Events;
+module events.events;
 
 public final class EventManager {
     private string[int] events;

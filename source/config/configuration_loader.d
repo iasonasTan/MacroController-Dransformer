@@ -23,7 +23,7 @@ public final class ConfigurationLoader : EventLoader {
         foreach (char[] line; eventsFile.byLine()) {
             string[] lineSplit = (line.replace(" ", " ").to!string).split("=");
             if(lineSplit.length != 2) {
-                writeln("Invalid line: "~line);
+                writeln("Invalid line found in configuration: '"~line~"'");
                 continue;
             }
             writeln(lineSplit);

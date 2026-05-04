@@ -1,12 +1,10 @@
 import std.stdio;
 import std.string;
 import std.process;
+import std.typecons;
 
-import data.parameters;
-import data.parameters;
 import config.configuration_loader;
-import data.parameters : DEVICE_PATH_IDX;
-import data.parameters : EVENTS_CONFIG_PATH_IDX;
+import data.parameters;
 
 import events.events;
 import input.linux_input;
@@ -22,12 +20,22 @@ int main(string[] args) {
 		return -1;
 	}
 
-	writeln("Macro controller transformer has started!");
-	int fd = open(params.get(DEVICE_PATH_IDX).toStringz(), O_RDONLY);
-	if(fd == -1) {
-		writeln("Error openning file...");
+	auto result = executeShell("whoami");
+	string name = result.output.strip();
+	if(name == "root") {
+		writeln("It seems like you're running application as sudo.");
+		writeln("This won't work! Run it as a regular user.");
 		return -1;
 	}
+
+	int fd = open(params.get(DEVICE_PATH_IDX).toStringz(), O_RDONLY);
+	if(fd == -1) {
+		writeln("Error: Cannot open device.");
+		writeln("Help: Make sure your user is in group 'input'");
+		return -1;
+	}
+
+	writeln("Macro controller transformer has started!");
 
 	EventManager eventManager = new EventManager(
 		new ConfigurationLoader(params.get(EVENTS_CONFIG_PATH_IDX))

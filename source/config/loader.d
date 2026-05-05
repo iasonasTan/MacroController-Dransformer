@@ -1,6 +1,6 @@
-module config.configuration_loader;
+module config.loader;
 
-import events.events;
+import events.manager;
 import std.file;
 import std.stdio;
 import std.conv;

@@ -1,4 +1,4 @@
-module events.events;
+module events.manager;
 
 public final class EventManager {
     private string[int] events;
@@ -11,7 +11,7 @@ public final class EventManager {
         if(string* action = keycode in events) {
             return *action;
         }
-        return "";
+        return null;
     }
 }
 
